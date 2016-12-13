@@ -483,8 +483,8 @@ int do_autodetect_dev(char const *base_path, char const *conf_path,
 	err = libusb_open(dev, &h);
 	libusb_free_device_list(devs, 1);
 	if (err < 0) {
-		fprintf(stderr, "Could not open device vid=0x%x pid=0x%x: %s, err=%d\n",
-			mach->vid, mach->pid, libusb_strerror(err), err);
+		fprintf(stderr, "Could not open device vid=0x%x pid=0x%x\n",
+			mach->vid, mach->pid);
 		goto out_deinit_usb;
 	}
 

@@ -16,7 +16,7 @@ else
 USBCFLAGS = -I/usr/include/libusb-1.0
 USBLDFLAGS = -L/usr/lib -lusb-1.0
 endif
-CONFCPPFLAGS = -DSYSCONFDIR='"$(sysconfdir)"'
+CONFCPPFLAGS = -DSYSCONFDIR='"$(sysconfdir)"' -std=gnu99
 
 imx_usb.o : imx_usb.c imx_sdp.h portable.h
 	$(CC) -c $*.c -o $@ -Wstrict-prototypes -Wno-trigraphs -pipe -ggdb $(USBCFLAGS) $(CFLAGS) $(CONFCPPFLAGS)
